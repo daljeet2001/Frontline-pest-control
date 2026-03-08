@@ -16,8 +16,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 export default function ContactUs(){
 
 
-
-
+const [ loading, setLoading ] = useState(false)
+ 
 
     const contactSchema = z.object({
         name:z.string().min(1,"Name is required"),
@@ -37,8 +37,11 @@ export default function ContactUs(){
     resolver: zodResolver(contactSchema),
   });
 
+  const sheet = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL
+  const phone = process.env.NEXT_PUBLIC_PHONE
 
-  const onSubmit = (data:FormData)=>{
+
+  const onSubmit = async(data:FormData)=>{
 
     const message = ` 
     New Pest Control Request
@@ -48,8 +51,25 @@ export default function ContactUs(){
     Service:${data.service}
     Mesage:${data.message}
     `;
+    setLoading(true)
 
-    window.open(`http://wa.me/917973065721?text=${encodeURIComponent(message)}`);
+    const res = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL!,{
+      method:"POST",
+      body:JSON.stringify({
+        name:data.name,
+        phone:data.phone,
+        email:data.email,
+        service:data.service,
+        message:data.message
+      })
+    })
+    setLoading(false);
+
+      alert("Request submitted")
+
+     return window.open(`https://wa.me/${process.env.NEXT_PUBLIC_PHONE!}?text=${encodeURIComponent(message)}`);
+
+    
 
   }
 
@@ -117,10 +137,10 @@ export default function ContactUs(){
         </div>
 
         <div className="flex gap-3 border-t border-gray-200 pt-4">
-<a href="tel:+917973065721">
+<a href={`tel:+${phone}`}>
      <button className="flex items-center gap-2 bg-[#006045] text-white px-4 py-2 rounded-xl hover:bg-[#004D38]"><FaPhoneAlt size={18}/>Call Now</button>
 </a>
-         <a href="https://wa.me/917973065721?text=I%20need%20pest%20control%20service" target="_blank">
+         <a href={`https://wa.me/${phone}?text=I%20need%20pest%20control%20service`} target="_blank">
                          <button className="flex items-center gap-2 bg-[#00A63D] text-white px-4 py-2 hover:bg-[#008A33] rounded-xl"><TbMessageCircleFilled size={18}/>WhatsApp</button></a>
             
         </div>
@@ -217,7 +237,7 @@ export default function ContactUs(){
         </div>
 
 
-        <button  onClick={handleSubmit(onSubmit)} className="text-white font-semibold w-full bg-emerald-700 rounded-lg py-3 hover:bg-emerald-900">Submit Request</button>
+        <button  onClick={handleSubmit(onSubmit)} className="text-white font-semibold w-full bg-emerald-700 rounded-lg py-3 hover:bg-emerald-900">{!loading?"Submit Request":"Submitting..."}</button>
 
     
 
