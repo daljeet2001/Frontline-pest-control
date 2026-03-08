@@ -32,6 +32,7 @@ const [ loading, setLoading ] = useState(false)
         const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(contactSchema),
@@ -43,7 +44,9 @@ const [ loading, setLoading ] = useState(false)
 
   const onSubmit = async(data:FormData)=>{
 
-    const message = ` 
+    try{
+
+          const message = ` 
     New Pest Control Request
     Name:${data.name}
     Phone:${data.phone}
@@ -65,12 +68,27 @@ const [ loading, setLoading ] = useState(false)
     })
     setLoading(false);
 
-      alert("Request submitted")
+    if(res.ok){
+      reset();
 
-     return window.open(`https://wa.me/${process.env.NEXT_PUBLIC_PHONE!}?text=${encodeURIComponent(message)}`);
+       alert("Request submitted");
 
-    
 
+       setTimeout(()=>{
+      window.location.href = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!}?text=${encodeURIComponent(message)}`
+       },500)
+
+    }
+
+    else{
+      alert("Something went wrong")
+    }
+
+     
+
+    }catch(e){
+      alert("Network error")
+    }
   }
 
 
@@ -193,7 +211,7 @@ const [ loading, setLoading ] = useState(false)
 
 </div>
 
-<div className="shadow-lg p-6 bg-white rounded-lg flex flex-col gap-6 w-full max-w-[552px] ">
+<form onSubmit={handleSubmit(onSubmit)} className="shadow-lg p-6 bg-white rounded-lg flex flex-col gap-6 w-full max-w-[552px] ">
 
         <div className="text-gray-900 font-bold text-2xl ">Request A Quote</div>
 
@@ -237,12 +255,12 @@ const [ loading, setLoading ] = useState(false)
         </div>
 
 
-        <button  onClick={handleSubmit(onSubmit)} className="text-white font-semibold w-full bg-emerald-700 rounded-lg py-3 hover:bg-emerald-900">{!loading?"Submit Request":"Submitting..."}</button>
+        <button   className="text-white font-semibold w-full bg-emerald-700 rounded-lg py-3 hover:bg-emerald-900">{!loading?"Submit Request":"Submitting..."}</button>
 
     
 
 
-    </div>
+    </form>
     
 
 
