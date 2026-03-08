@@ -23,8 +23,12 @@ export default function Header(){
                 </ul>
 
                 <div className="flex items-center gap-4 mt-6">
+                    <a href="tel:+917973065721">
                     <button className="flex items-center gap-2 bg-[#006045] text-white px-8 py-4 rounded-xl hover:bg-[#004D38]"><FaPhoneAlt size={28}/>Call Now</button>
-                         <button className="flex items-center gap-2 bg-[#00A63D] text-white px-8 py-4 hover:bg-[#008A33] rounded-xl"><TbMessageCircleFilled size={28}/>WhatsApp</button>
+                        </a>
+                        <a href="https://wa.me/917973065721?text=I%20need%20pest%20control%20service" target="_blank">
+                         <button className="flex items-center gap-2 bg-[#00A63D] text-white px-8 py-4 hover:bg-[#008A33] rounded-xl"><TbMessageCircleFilled size={28}/>WhatsApp</button></a>
+                     
                 </div>
 
             </div>

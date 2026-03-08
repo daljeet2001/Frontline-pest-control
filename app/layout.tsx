@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Frontline pest control | Safe & Professional",
+  title: "Frontline Pest Control | Safe & Professional",
   description: "Professional pest control services for termites, cockroaches, rodents and more. Book a free inspection today.",
 };
 

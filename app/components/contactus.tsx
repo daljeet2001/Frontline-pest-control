@@ -40,6 +40,17 @@ export default function ContactUs(){
 
   const onSubmit = (data:FormData)=>{
 
+    const message = ` 
+    New Pest Control Request
+    Name:${data.name}
+    Phone:${data.phone}
+    Email:${data.email}
+    Service:${data.service}
+    Mesage:${data.message}
+    `;
+
+    window.open(`http://wa.me/917973065721?text=${encodeURIComponent(message)}`);
+
   }
 
 
@@ -106,9 +117,11 @@ export default function ContactUs(){
         </div>
 
         <div className="flex gap-3 border-t border-gray-200 pt-4">
-
-              <button className="flex items-center gap-2 bg-[#006045] text-white px-4 py-2 rounded-xl hover:bg-[#004D38]"><FaPhoneAlt size={18}/>Call Now</button>
-                         <button className="flex items-center gap-2 bg-[#00A63D] text-white px-4 py-2 hover:bg-[#008A33] rounded-xl"><TbMessageCircleFilled size={18}/>WhatsApp</button>
+<a href="tel:+917973065721">
+     <button className="flex items-center gap-2 bg-[#006045] text-white px-4 py-2 rounded-xl hover:bg-[#004D38]"><FaPhoneAlt size={18}/>Call Now</button>
+</a>
+         <a href="https://wa.me/917973065721?text=I%20need%20pest%20control%20service" target="_blank">
+                         <button className="flex items-center gap-2 bg-[#00A63D] text-white px-4 py-2 hover:bg-[#008A33] rounded-xl"><TbMessageCircleFilled size={18}/>WhatsApp</button></a>
             
         </div>
 
