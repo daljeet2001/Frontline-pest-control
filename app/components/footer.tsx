@@ -7,9 +7,9 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function Footer(){
     return(
-        <div className="w-full p-16 flex flex-col gap-4  items-center gap-4 bg-[#111828] text-gray-300">
+        <div className="w-full px-4 py-16 md:px-16 flex flex-col gap-8 md:gap-4  items-center bg-[#111828] text-gray-300">
 
-            <div className="flex items-start justify-between w-full
+            <div className="flex flex-col md:flex-row items-start gap-8 md:justify-between w-full
 ">
 
                 <div className="flex flex-col gap-2 ">
@@ -35,19 +35,19 @@ export default function Footer(){
 
                     <ul className="flex flex-col gap-2">
                         <li>
-                              <Link className="hover:text-emerald-400"  href="/">Home</Link>
+                              <a className="hover:text-emerald-400"  href="#header">Home</a>
                         </li>
                                  <li>
-                              <Link className="hover:text-emerald-400"  href="/">Services</Link>
+                              <a className="hover:text-emerald-400"  href="#services">Services</a>
                         </li>
                                  <li>
-                              <Link className="hover:text-emerald-400"  href="/">About Us</Link>
+                              <a className="hover:text-emerald-400"  href="#about">About Us</a>
                         </li>
                                  <li>
-                              <Link className="hover:text-emerald-400"  href="/">Contact</Link>
+                              <a className="hover:text-emerald-400"  href="#contact">Contact</a>
                         </li>
                                      <li>
-                              <Link className="hover:text-emerald-400"  href="/">Plans</Link>
+                              <a className="hover:text-emerald-400"  href="#plans">Plans</a>
                         </li>
                       
                     </ul>

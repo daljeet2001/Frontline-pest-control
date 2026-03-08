@@ -4,10 +4,10 @@ import { IoLocationOutline } from "react-icons/io5";
 
 export default function Locations(){
     return(
-        <div className="w-full p-16 flex flex-col justify-center gap-4 bg-[#E8FCF2]">
+        <div className="w-full md:px-16 py-16 px-4 flex flex-col justify-center gap-8 md:gap-4 bg-[#E8FCF2]">
             <div className="text-gray-900 font-bold text-3xl text-center">Our Service Locations</div>
 
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:gap-8 gap-4 mt-4">
 
                 <div className=" shadow-md w-[189.33px] p-4 rounded-lg bg-white flex flex-col gap-2 items-center justify-center text-emerald-600">
                     <IoLocationOutline size={24}/>

@@ -45,13 +45,13 @@ export default function ContactUs(){
 
 
     return(
-        <div className=" w-full p-16 flex flex-col items-center gap-4 bg-[#E8FCF2]">
+        <div className=" w-full md:px-16 py-16 px-4 flex flex-col items-center gap-4 bg-[#E8FCF2]">
                   <div className="flex flex-col items-center gap-4 max-w-3xl">
                 <div className="font-bold text-4xl text-gray-900">Contact Us</div>
                 <div className="text-xl text-gray-600 text-center">Get in touch with us for a free consultation and quote
 </div>
        </div>
-<div className="flex items-center justify-center gap-8 w-full mt-8">
+<div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full mt-8">
 
 
 <div className="flex flex-col gap-4 w-full max-w-[552px]">

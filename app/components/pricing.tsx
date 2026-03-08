@@ -17,11 +17,11 @@ export default function Pricing(){
     { service: "Termite Control", prices: [5200, 6200, 7200, 8200, 9200] },
   ];
     return(
-        <div className=" w-full p-16 flex flex-col items-center gap-4 bg-[#E8FCF2] ">
-           <div className="font-bold text-4xl text-gray-900">Standard Pest Control Rates
+        <div className=" w-full md:px-16 px-4 py-16 flex flex-col items-center gap-8 md:gap-4 bg-[#E8FCF2] ">
+           <div className="font-bold text-4xl text-gray-900 text-center">Standard Pest Control Rates
  </div>
-
- <table className="w-full border border-gray-400 text-left mt-8 overflow-x-auto">
+<div className="w-full overflow-x-auto mt-8">
+     <table className="min-w-[700px] w-full border border-gray-400 text-left">
     <thead className="bg-white-100">
         <tr>
                 <th className="px-6 py-4 border border-gray-400">Treatment Type</th>
@@ -51,6 +51,9 @@ export default function Pricing(){
     </tbody>
 
  </table>
+
+</div>
+
 
 
 

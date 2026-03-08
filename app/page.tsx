@@ -13,18 +13,33 @@ import Reviews from "./components/reviews";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full">
+
       <Banner />
       <Navbar />
-      <Header />
-      <Services />
+      <div id="header">
+        <Header />
+      </div>
+
+      <div id="services">
+        <Services />
+      </div>
+
       <Locations />
-     
-      <AboutUs />
-       <Pricing/>
-       <Reviews/>
-      <ContactUs />
-      <Footer/>
+      <div id="about">
+        <AboutUs />
+      </div>
+      <div id="plans">
+        <Pricing />
+      </div>
+
+      <Reviews />
+
+      <div id="contact">
+        <ContactUs />
+      </div>
+
+      <Footer />
 
 
 

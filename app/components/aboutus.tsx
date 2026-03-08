@@ -6,7 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 
 export default function AboutUs(){
     return(
-        <div className="flex flex-col items-center gap-4 w-full p-16">
+        <div className="flex flex-col items-center gap-8 md:gap-4 w-full px-16 md:px-4 py-16">
 
                  <div className="flex flex-col items-center gap-4 max-w-3xl">
                 <div className="font-bold text-4xl text-gray-900">About Us</div>
@@ -14,10 +14,10 @@ export default function AboutUs(){
 </div>
             </div>
 
-            <div className="flex items-center justify-between mt-8">
-                <img src="/aboutus.jpg" alt="aboutus_img" className="rounded-lg w-[616px] h-[762px] object-cover"/>
+            <div className="flex flex-col gap-4  md:flex-row items-center justify-center md:justify-between mt-8 w-full ">
+                <img src="/aboutus.jpg" alt="aboutus_img" className="rounded-lg  w-full max-w-[616px] h-[762px] object-cover"/>
 
-                <div className="flex flex-col gap-4 w-[50%]">
+                <div className="flex flex-col gap-4 w-full md:max-w-[50%]">
                     <div className="font-bold text-3xl text-gray-900">Why Choose Frontline Pest Control?
 
 </div>

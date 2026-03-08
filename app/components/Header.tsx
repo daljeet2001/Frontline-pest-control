@@ -8,11 +8,11 @@ import { TbMessageCircleFilled } from "react-icons/tb";
 export default function Header(){
     return(
 
-        <div className=" w-full p-16 flex items-center gap-4 bg-[#E8FCF2]">
+        <div className=" w-full md:px-16  px-4 py-16 flex flex-col md:flex-row md:items-center justify-center gap-8 md:gap-4  bg-[#E8FCF2]">
             
             <div className="flex flex-col gap-2 justify-start">
-                <div className="text-gray-900 font-extrabold text-5xl">Frontline Pest Control</div>
-                <div className="text-gray-900 font-extrabold text-5xl mb-2">Services</div>
+                <div className="text-gray-900 font-extrabold text-4xl md:text-5xl">Frontline Pest Control Services</div>
+                <div className="text-gray-900 font-extrabold text-4xl md:text-5xl mb-2"></div>
                 <div className="text-xl text-gray-700">Protecting your home and business from unwanted pests with safe, effective, and eco-friendly solutions.</div>
 
                 <ul className="flex flex-col gap-2 text-lg text-[#007A55]">
