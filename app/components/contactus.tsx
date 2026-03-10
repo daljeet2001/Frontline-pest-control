@@ -74,9 +74,9 @@ const [ loading, setLoading ] = useState(false)
        alert("Request submitted");
 
 
-       setTimeout(()=>{
-      window.location.href = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!}?text=${encodeURIComponent(message)}`
-       },500)
+      //  setTimeout(()=>{
+      // window.location.href = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!}?text=${encodeURIComponent(message)}`
+      //  },500)
 
     }
 
