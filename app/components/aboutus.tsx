@@ -1,23 +1,55 @@
+"use client"
+
 import { GiAchievement } from "react-icons/gi";
 import { RiGroupLine } from "react-icons/ri";
 import { IoTimeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
+import { motion, Variants } from "framer-motion"
+
+
+
+const container: Variants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren:0.2
+        }
+    }
+}
+
+const item: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 40,
+        scale:0.95
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        scale:1,
+        transition: {
+            ease: "easeOut",
+            duration: 0.5
+        }
+    }
+}
 
 
 export default function AboutUs(){
     return(
-        <div className="flex flex-col items-center gap-8 md:gap-4 w-full px-16 md:px-4 py-16">
+        <motion.div variants= {container} initial="hidden" whileInView="show" viewport={{ once:true,margin:"-100px" }} className="flex flex-col items-center gap-8 md:gap-4 w-full px-16 md:px-4 py-16">
 
-                 <div className="flex flex-col items-center gap-4 max-w-3xl">
+                 <motion.div variants = {item} className="flex flex-col items-center gap-4 max-w-3xl">
                 <div className="font-bold text-4xl text-gray-900">About Us</div>
                 <div className="text-xl text-gray-600 text-center">Leading pest control service provider in Uttarakhand with a commitment to delivering safe, effective, and environmentally responsible pest management solutions.
 </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col gap-4  md:flex-row items-center justify-center md:justify-between mt-8 w-full ">
-                <img src="/aboutus.jpg" alt="aboutus_img" className="rounded-lg  w-full max-w-[616px] h-[762px] object-cover"/>
+            <motion.div variants = {container} initial="hidden" whileInView="show" viewport={{ once:true, margin:"-100px"}} className="flex flex-col gap-4  md:flex-row items-center justify-center md:justify-between mt-8 w-full ">
+                <motion.img variants = {item} src="/aboutus.jpg" alt="aboutus_img" className="rounded-lg  w-full max-w-[616px] h-[762px] object-cover"/>
 
-                <div className="flex flex-col gap-4 w-full md:max-w-[50%]">
+                <motion.div variants = {item} className="flex flex-col gap-4 w-full md:max-w-[50%]">
                     <div className="font-bold text-3xl text-gray-900">Why Choose Frontline Pest Control?
 
 </div>
@@ -80,11 +112,11 @@ export default function AboutUs(){
     </div>
 
 </div>
-                </div>
+                </motion.div>
 
-            </div>
+            </motion.div>
 
 
-        </div>
+        </motion.div>
     )
 }
